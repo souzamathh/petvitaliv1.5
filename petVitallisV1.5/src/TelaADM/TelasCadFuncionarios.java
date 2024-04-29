@@ -4,9 +4,8 @@
  */
 package TelaADM;
 
-import ClassesDeCadastros.CadFuncionario;
+import ClassesDoRecepcionista.CadFuncionario;
 import TelasLogin.TelaMenu;
-import javax.swing.ImageIcon;
 
 import javax.swing.JOptionPane;
 
@@ -19,15 +18,6 @@ public class TelasCadFuncionarios extends javax.swing.JFrame {
         super("Cadastro de Funcionarios");
         initComponents();
         this.setLocationRelativeTo(null);
-        
-           
-        String caminhoImagem = "/icon/iconepet.png";
-        
-         // Carrega a imagem do ícone
-        ImageIcon icon = new ImageIcon(getClass().getResource( caminhoImagem ));
-        // Define o ícone da janela
-        this.setIconImage(icon.getImage());
-        
     }
 
     /**
@@ -60,8 +50,6 @@ public class TelasCadFuncionarios extends javax.swing.JFrame {
         BotaoVoltarMenu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("CADASTROS DE FUNCIONARIOS");
-        setBackground(new java.awt.Color(0, 0, 0));
 
         BotaoCadFuncionario.setText("Novo Cadastro");
         BotaoCadFuncionario.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +59,12 @@ public class TelasCadFuncionarios extends javax.swing.JFrame {
         });
 
         BotaoConsultarFuncionario.setText("Consultar Cadastro");
+
+        NomeFuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NomeFuncionarioActionPerformed(evt);
+            }
+        });
 
         nomefun.setText("Nome");
 
@@ -136,7 +130,7 @@ public class TelasCadFuncionarios extends javax.swing.JFrame {
                                     .addComponent(numeroresidenciafun)))
                             .addComponent(cepfuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(residenciafuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BotaoCadFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(BotaoConsultarFuncionario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,20 +179,17 @@ public class TelasCadFuncionarios extends javax.swing.JFrame {
                 .addComponent(pisfun)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(areapisfuncionario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(72, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotaoCadFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoCadFuncionarioActionPerformed
-        
-        
+                
         CadFuncionario alo = new CadFuncionario();
         //nome*, email*, numero*,senha, usuario*;
-        
-        
-        
+               
         if (!NomeFuncionario.getText().isEmpty()) {
             alo.setNome(NomeFuncionario.getText());
             
@@ -206,47 +197,6 @@ public class TelasCadFuncionarios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Campo Nome Inválido");
         }
         
-        if (!cpffuncionario.getText().isEmpty()) {
-            alo.setNome(cpffuncionario.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "Campo CPF Inválido");
-        }
-        
-        if (!rgfuncionario.getText().isEmpty()) {
-            alo.setNome(rgfuncionario.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "Campo RG Inválido");
-        }
-        
-        if (!datadenascifuncionario.getText().isEmpty()) {
-            alo.setNome(datadenascifuncionario.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "Campo Data de Nascimento Inválido");
-        }
-        
-        if (!areapisfuncionario.getText().isEmpty()) {
-            alo.setNome(areapisfuncionario.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "Campo PIS Inválido");
-        }
-        
-        if (!enderecofuncionario.getText().isEmpty()) {
-            alo.setNome(enderecofuncionario.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "Campo Endereco Funcionario Inválido");
-        }
-        
-        if (!residenciafuncionario.getText().isEmpty()) {
-            alo.setNome(residenciafuncionario.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "Campo Residencia Inválido");
-        }
-        
-        if (!cepfuncionarios.getText().isEmpty()) {
-            alo.setNome(cepfuncionarios.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "Campo Cep Inválido");
-        }
     }//GEN-LAST:event_BotaoCadFuncionarioActionPerformed
 
     private void datadenascifuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_datadenascifuncionarioActionPerformed
@@ -254,9 +204,12 @@ public class TelasCadFuncionarios extends javax.swing.JFrame {
     }//GEN-LAST:event_datadenascifuncionarioActionPerformed
 
     private void BotaoVoltarMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoVoltarMenuActionPerformed
-        dispose();
-        
+        dispose(); 
     }//GEN-LAST:event_BotaoVoltarMenuActionPerformed
+
+    private void NomeFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeFuncionarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomeFuncionarioActionPerformed
 
     /**
      * @param args the command line arguments
