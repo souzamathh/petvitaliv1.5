@@ -31,12 +31,11 @@ public class TelaConsProduto extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         consultaBarraDeTextoPesquisa = new javax.swing.JTextPane();
         consultaFiltroPesquisa = new javax.swing.JComboBox<>();
-        jLabel1 = new javax.swing.JLabel();
+        consProdCriarNovoBotao = new javax.swing.JButton();
+        consultaProdPesquisarBotao = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 720));
 
         consultaBancoProdutos.setModel(new javax.swing.table.DefaultTableModel(
@@ -56,20 +55,14 @@ public class TelaConsProduto extends javax.swing.JFrame {
 
         consultaFiltroPesquisa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Nome", "Tipo", "Validade" }));
 
-        jLabel1.setText("Filtro:");
-
-        jMenu1.setText("Opções");
-
-        jMenuItem2.setText("Criar Novo Produto");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        consProdCriarNovoBotao.setText("Criar Novo");
+        consProdCriarNovoBotao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                consProdCriarNovoBotaoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
 
-        jMenuBar1.add(jMenu1);
-
+        consultaProdPesquisarBotao.setText("Q");
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -77,34 +70,35 @@ public class TelaConsProduto extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(consultaFiltroPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(consultaProdPesquisarBotao, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(consProdCriarNovoBotao))
+            .addComponent(jScrollPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(consultaFiltroPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(consultaFiltroPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(consProdCriarNovoBotao)
+                        .addComponent(consultaProdPesquisarBotao)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        TelaCadProdutos CadPro = new TelaCadProdutos ();
-        CadPro.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void consProdCriarNovoBotaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consProdCriarNovoBotaoActionPerformed
+        TelaCadProdutos CadProd = new TelaCadProdutos ();
+        CadProd.setVisible(true);
+    }//GEN-LAST:event_consProdCriarNovoBotaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,13 +136,12 @@ public class TelaConsProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton consProdCriarNovoBotao;
     private javax.swing.JTable consultaBancoProdutos;
     private javax.swing.JTextPane consultaBarraDeTextoPesquisa;
     private javax.swing.JComboBox<String> consultaFiltroPesquisa;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JButton consultaProdPesquisarBotao;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

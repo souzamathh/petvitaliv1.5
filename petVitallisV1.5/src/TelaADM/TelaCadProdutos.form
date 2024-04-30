@@ -86,7 +86,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="buttonCadProdVoltarParaMenu">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Voltar para Menu"/>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonCadProdVoltarParaMenuActionPerformed"/>
@@ -128,12 +128,11 @@
     <Component class="javax.swing.JComboBox" name="cadastroTipoDeProduto">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="5">
-            <StringItem index="0" value=""/>
-            <StringItem index="1" value="Limpeza"/>
-            <StringItem index="2" value="Medicamento"/>
-            <StringItem index="3" value="Utenc&#xed;lio"/>
-            <StringItem index="4" value="Ra&#xe7;&#xe3;o"/>
+          <StringArray count="4">
+            <StringItem index="0" value="Limpeza"/>
+            <StringItem index="1" value="Medicamento"/>
+            <StringItem index="2" value="Utenc&#xed;lio"/>
+            <StringItem index="3" value="Ra&#xe7;&#xe3;o"/>
           </StringArray>
         </Property>
         <Property name="alignmentX" type="float" value="0.0"/>

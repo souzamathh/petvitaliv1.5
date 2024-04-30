@@ -12,6 +12,7 @@ import TelaADM.TelaCadProdutos;
 import TelaRecepcionista.TelaCadClientes;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import TelaRecepcionista.TelaConsProduto;
 
 /**
  *
@@ -294,8 +295,8 @@ public class TelaMenu extends javax.swing.JFrame {
 
     private void CadProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadProdutosActionPerformed
 
-        TelaCadProdutos CadPro = new TelaCadProdutos ();
-        CadPro.setVisible(true);
+        TelaConsProduto ConsPro = new TelaConsProduto ();
+        ConsPro.setVisible(true);
 
     }//GEN-LAST:event_CadProdutosActionPerformed
 

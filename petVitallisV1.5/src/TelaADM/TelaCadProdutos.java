@@ -44,7 +44,7 @@ public class TelaCadProdutos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        buttonCadProdVoltarParaMenu.setText("Voltar para Menu");
+        buttonCadProdVoltarParaMenu.setText("Voltar");
         buttonCadProdVoltarParaMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonCadProdVoltarParaMenuActionPerformed(evt);
@@ -71,7 +71,7 @@ public class TelaCadProdutos extends javax.swing.JFrame {
         labelTipoDeProduto.setText("Tipo de Produto");
         labelTipoDeProduto.setAlignmentY(0.0F);
 
-        cadastroTipoDeProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "", "Limpeza", "Medicamento", "Utencílio", "Ração" }));
+        cadastroTipoDeProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Limpeza", "Medicamento", "Utencílio", "Ração" }));
         cadastroTipoDeProduto.setAlignmentX(0.0F);
         cadastroTipoDeProduto.setAlignmentY(0.0F);
         cadastroTipoDeProduto.addActionListener(new java.awt.event.ActionListener() {
@@ -151,10 +151,43 @@ public class TelaCadProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonCadProdVoltarParaMenuActionPerformed
 
     private void buttonCadProdConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonCadProdConfirmarActionPerformed
+        /*String nomeAnimal = CampoNomedoPet.getText();
+        String nomeCliente = CampoNomedoTutor.getText();
+        String tipoConsulta = (String) CaixaDeTipodeConsultas.getSelectedItem();
+
+        // Aqui você pode adicionar a lógica para agendar a consulta com os dados fornecidos
+
+        // Por enquanto, apenas exibimos uma mensagem com os dados
+        JOptionPane.showMessageDialog(this, "Consulta agendada:\n\n"
+                                        + "Nome do Animal: " + nomeAnimal + "\n"
+                                        + "Nome do Cliente: " + nomeCliente + "\n"
+                                        + "Tipo de Consulta: " + tipoConsulta); */
+        
+        
         CadProdutos nomeProduto = new CadProdutos();
         CadProdutos tipoProduto = new CadProdutos();
         CadProdutos validadeProduto = new CadProdutos();
         CadProdutos codProduto = new CadProdutos ();
+        
+        String nomeProd = cadastroNomeDoProduto.getText();
+        String validadeProd = cadastroValidadeDeProduto.getText();
+        String tipoProd = (String) cadastroTipoDeProduto.getSelectedItem();
+        String codProd = (String) cadastroCódigoDoProduto.getText();
+        
+        JOptionPane.showMessageDialog(this, "Produto cadastrado!:\n\n"
+                                        + "Cód. do Produto: " + codProd + "\n"
+                                        + "Nome do Produto: " + nomeProd + "\n"
+                                        + "Tipo do Produto: " + tipoProd + "\n"
+                                        + "Validade do Produto: " + validadeProd)
+                                        ;
+
+        
+        /*if (!cadastroTipoDeProduto.getSelectedItem().isEmpty()) {
+            tipoProduto.setTipoDeProduto((String) cadastroTipoDeProduto.getSelectedItem());
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "Campo Código do Produto Inválido");
+        } */
         
         if (!cadastroCódigoDoProduto.getText().isEmpty()) {
             codProduto.setCodProduto(cadastroCódigoDoProduto.getText());
